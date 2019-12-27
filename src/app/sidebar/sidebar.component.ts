@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { STATIC } from '../core/system.constants';
+import { STATIC_SIDEBAR, SOCIALLINKS } from '../core/system.constants';
 
 @Component({
     selector: 'app-sidebar',
@@ -8,10 +8,13 @@ import { STATIC } from '../core/system.constants';
 })
 export class SidebarComponent implements OnInit {
 
-    static:object = STATIC;
+    static: object = STATIC_SIDEBAR;
+    socialLinks: object = SOCIALLINKS;
+    
     constructor() { }
 
     ngOnInit() {
+
     }
 
 }

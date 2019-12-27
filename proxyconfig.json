@@ -1,0 +1,7 @@
+{
+    "/admin": {
+        "target": "http://localhost/code-with-JS/",
+        "secure": false,
+        "changeOrigin": true
+    }
+}
