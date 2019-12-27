@@ -10,6 +10,7 @@ import { DetailComponent } from './detail/detail.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PrettyDate } from './core/datepipe.pipe';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
         ListComponent,
         DetailComponent,
         AboutComponent,
-        ContactComponent
+        ContactComponent,
+        PrettyDate
     ],
     imports: [
         BrowserModule,

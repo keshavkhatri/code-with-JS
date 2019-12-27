@@ -757,8 +757,7 @@ function twentytwenty_get_elements_array() {
 }
 
 add_action('rest_api_init', 'register_rest_images');
-function register_rest_images()
-{
+function register_rest_images(){
     register_rest_field(
         array('post'),
         'featured_image',
@@ -769,8 +768,7 @@ function register_rest_images()
         )
     );
 }
-function get_rest_featured_image($object, $field_name, $request)
-{
+function get_rest_featured_image($object, $field_name, $request){
     if ($object['featured_media']) {
         $img = wp_get_attachment_image_src($object['featured_media'], 'app-thumb');
         return $img[0];
