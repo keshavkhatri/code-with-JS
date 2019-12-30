@@ -775,3 +775,22 @@ function get_rest_featured_image($object, $field_name, $request){
     }
     return false;
 }
+
+add_action('rest_api_init', 'register_post_metas');
+function register_post_metas(){
+    register_rest_field(
+        array('post'),
+        'reading_time',
+        array(
+            'get_callback'    => 'get_rest_post_metas',
+            'update_callback' => null,
+            'schema'          => null,
+        )
+    );
+}
+function get_rest_post_metas($object, $field_name, $request){
+    if ($object['featured_media']) {
+        return get_post_meta($object['id'], 'reading_time', true);
+    }
+    return false;
+}

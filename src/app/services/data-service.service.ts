@@ -12,7 +12,7 @@ export class DataServiceService {
         private http: BaseService,
     ) { }
 
-    posts() {
-        return this.http.get(`${APIS.POSTS}`);
+    posts(currentPage, pageSize) {
+        return this.http.get(`${APIS.POSTS}?per_page=${pageSize}&page=${currentPage}`);
     }
 }

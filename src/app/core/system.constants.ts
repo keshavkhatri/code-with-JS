@@ -1,6 +1,8 @@
 export const SYSTEM_CONSTANTS = {
     API_ROOT: '/admin/wp-json/wp/',
     API_VERSION: 'V2/',
+    DEFAULTPAGE: 1,
+    DEFAULTPAGESIZE: 10,
 };
 
 export const APIS = {
@@ -16,6 +18,15 @@ export const STATIC_SIDEBAR = {
     ABOUTME: 'About Me',
     GETINTOUCH: 'Get in Touch',
     PROFILEPIC: 'assets/images/profile.png'
+}
+
+export const STATIC_HOME = {
+    HOMETITLE: 'DevBlog - A Blog Template Made For Developers',
+    HOMESUBTITLE: 'Welcome to my blog. Subscribe and get my latest blog post in your inbox.',
+    YOUREMAIL: 'Your email',
+    SUBSCRIBE: 'Subscribe',
+    READMORE: 'Read more &rarr;',
+    NEXT: 'Next'
 }
 
 export const SOCIALLINKS = [
