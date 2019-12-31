@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
     posts:Array<object> = [];
     currentPage: number = SYSTEM_CONSTANTS.DEFAULTPAGE;
     pageSize: number = SYSTEM_CONSTANTS.DEFAULTPAGESIZE;
+    static: object = STATIC_HOME;
 
     constructor(
         private api: DataServiceService,

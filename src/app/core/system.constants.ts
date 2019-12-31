@@ -25,7 +25,7 @@ export const STATIC_HOME = {
     HOMESUBTITLE: 'Welcome to my blog. Subscribe and get my latest blog post in your inbox.',
     YOUREMAIL: 'Your email',
     SUBSCRIBE: 'Subscribe',
-    READMORE: 'Read more &rarr;',
+    READMORE: 'Read more ',
     NEXT: 'Next'
 }
 
