@@ -3,6 +3,7 @@ export const SYSTEM_CONSTANTS = {
     API_VERSION: 'V2/',
     DEFAULTPAGE: 1,
     DEFAULTPAGESIZE: 10,
+    PARALENGTH: 500,
 };
 
 export const APIS = {
@@ -21,6 +22,15 @@ export const STATIC_SIDEBAR = {
 }
 
 export const STATIC_HOME = {
+    HOMETITLE: 'DevBlog - A Blog Template Made For Developers',
+    HOMESUBTITLE: 'Welcome to my blog. Subscribe and get my latest blog post in your inbox.',
+    YOUREMAIL: 'Your email',
+    SUBSCRIBE: 'Subscribe',
+    READMORE: 'Read more ',
+    NEXT: 'Next'
+}
+
+export const STATIC_LIST = {
     HOMETITLE: 'DevBlog - A Blog Template Made For Developers',
     HOMESUBTITLE: 'Welcome to my blog. Subscribe and get my latest blog post in your inbox.',
     YOUREMAIL: 'Your email',

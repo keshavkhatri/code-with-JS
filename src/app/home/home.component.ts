@@ -9,35 +9,39 @@ import { SYSTEM_CONSTANTS, STATIC_HOME } from '../core/system.constants';
 })
 export class HomeComponent implements OnInit {
 
-    posts:Array<object> = [];
+    posts: Array<object> = [];
     currentPage: number = SYSTEM_CONSTANTS.DEFAULTPAGE;
     pageSize: number = SYSTEM_CONSTANTS.DEFAULTPAGESIZE;
     static: object = STATIC_HOME;
+    length: number = SYSTEM_CONSTANTS.PARALENGTH;
+    loading: boolean = false;
 
     constructor(
         private api: DataServiceService,
     ) { }
 
     ngOnInit() {
+        this.loading = true;
         this.getPosts();
     }
 
-    nextPage(){
+    nextPage() {
         this.currentPage += 1;
         this.getPosts();
     }
 
-    previousPage(){
-        if (this.currentPage > 0){
+    previousPage() {
+        if (this.currentPage > 0) {
             this.currentPage -= 1;
         }
         this.getPosts();
     }
 
-    getPosts(){
+    getPosts() {
         this.api.posts(this.currentPage, this.pageSize).subscribe(
-            (data: Array<object>) => {
-                this.posts = data;
+            (data: any) => {
+                this.posts = data.body;
+                this.loading = false;
             },
             (error) => {
 

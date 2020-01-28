@@ -14,10 +14,10 @@
 </section>
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container">
-
+        <div class="loader" *ngIf="loading"><img src="/assets/images/ajax-loader.gif"></div>
         <div class="item mb-5" *ngFor="let post of posts">
             <div class="media">
-                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{post?.featured_image}}" alt="image">
+                <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{post?.featured_image}}" onerror="this.src='/assets/images/noimage.png'"alt="image">
                 <div class="media-body">
                     <h3 class="title mb-1"><a [routerLink]="['/post',post.slug]">{{post?.title?.rendered}}</a></h3>
                     <div class="meta mb-1">
@@ -25,7 +25,7 @@
                         <span class="time">{{post?.reading_time}}</span>
                         <span class="comment"><a href="#">8 comments</a></span>
                     </div>
-                    <div class="intro" [innerHtml]="post?.excerpt?.rendered"></div>
+                    <div class="intro" [innerHtml]="post?.excerpt?.rendered.substring(0, length)"></div>
                     <a class="more-link" [routerLink]="['/post',post.slug]">{{static.READMORE}}&rarr;</a>
                 </div>
                 <!--//media-body-->
