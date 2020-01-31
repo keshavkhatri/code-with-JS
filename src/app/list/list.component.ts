@@ -15,6 +15,8 @@ export class ListComponent implements OnInit {
     loading: boolean = false;
     static: object = STATIC_LIST;
     totalPages:number;
+    length: number = SYSTEM_CONSTANTS.PARALENGTH;
+
 
     constructor(
         private api: DataServiceService,

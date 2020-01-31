@@ -1,5 +1,6 @@
 <section class="blog-list px-3 py-5 p-md-5">
     <div class="container">
+        <div class="loader" *ngIf="loading"><img src="/assets/images/ajax-loader.gif"></div>
         <div class="item mb-5" *ngFor="let post of posts">
             <div class="media">
                 <img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="{{post?.featured_image}}"
@@ -7,9 +8,8 @@
                 <div class="media-body">
                     <h3 class="title mb-1"><a [routerLink]="['/post',post.slug]">{{post?.title?.rendered}}</a></h3>
                     <div class="meta mb-1">
-                        <span class="date">Published {{post?.date | prettyDate}}</span>
+                        <span class="date">{{static.PUBLISHED}} {{post?.date | prettyDate}}</span>
                         <span class="time">{{post?.reading_time}}</span>
-                        <span class="comment"><a href="#">8 comments</a></span>
                     </div>
                     <div class="intro" [innerHtml]="post?.excerpt?.rendered.substring(0, length)"></div>
                     <a class="more-link" [routerLink]="['/post',post.slug]">{{static.READMORE}}&rarr;</a>
@@ -21,9 +21,11 @@
         <!--//item-->
 
         <nav class="blog-nav nav nav-justified my-5">
-            <a class="nav-link-prev nav-item nav-link rounded-left" (click)="previousPage()" [class.disabled]="currentPage == 1">Previous<i
+            <a class="nav-link-prev nav-item nav-link rounded-left" (click)="previousPage()"
+                [class.disabled]="currentPage == 1">{{static.PREVIOUS}}<i
                     class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
-            <a class="nav-link-next nav-item nav-link rounded-right" (click)="nextPage()" [class.disabled]="currentPage == totalPages">Next<i
+            <a class="nav-link-next nav-item nav-link rounded-right" (click)="nextPage()"
+                [class.disabled]="currentPage == totalPages">{{static.NEXT}}<i
                     class="arrow-next fas fa-long-arrow-alt-right"></i></a>
         </nav>
 

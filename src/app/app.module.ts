@@ -10,7 +10,7 @@ import { DetailComponent } from './detail/detail.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PrettyDate } from './core/datepipe.pipe';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
 @NgModule({
     declarations: [
@@ -21,12 +21,12 @@ import { PrettyDate } from './core/datepipe.pipe';
         DetailComponent,
         AboutComponent,
         ContactComponent,
-        PrettyDate
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        NgxPrettyDateModule
     ],
     providers: [],
     bootstrap: [AppComponent]

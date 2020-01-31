@@ -15,4 +15,8 @@ export class DataServiceService {
     posts(currentPage, pageSize) {
         return this.http.get(`${APIS.POSTS}?per_page=${pageSize}&page=${currentPage}`);
     }
+
+    post(slug){
+        return this.http.get(`${APIS.POSTS}?slug=${slug}`);
+    }
 }

@@ -3,7 +3,7 @@ export const SYSTEM_CONSTANTS = {
     API_VERSION: 'V2/',
     DEFAULTPAGE: 1,
     DEFAULTPAGESIZE: 10,
-    PARALENGTH: 500,
+    PARALENGTH: 300,
 };
 
 export const APIS = {
@@ -27,16 +27,20 @@ export const STATIC_HOME = {
     YOUREMAIL: 'Your email',
     SUBSCRIBE: 'Subscribe',
     READMORE: 'Read more ',
+    PUBLISHED: 'Published',
     NEXT: 'Next'
 }
 
+export const STATIC_DETAILS = {
+    PUBLISHED: 'Published',
+    
+}
+
 export const STATIC_LIST = {
-    HOMETITLE: 'DevBlog - A Blog Template Made For Developers',
-    HOMESUBTITLE: 'Welcome to my blog. Subscribe and get my latest blog post in your inbox.',
-    YOUREMAIL: 'Your email',
-    SUBSCRIBE: 'Subscribe',
     READMORE: 'Read more ',
-    NEXT: 'Next'
+    NEXT: 'Next',
+    PUBLISHED: 'Published',
+    PREVIOUS: 'Previous'
 }
 
 export const SOCIALLINKS = [
