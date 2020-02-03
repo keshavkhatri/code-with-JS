@@ -794,3 +794,21 @@ function get_rest_post_metas($object, $field_name, $request){
     }
     return false;
 }
+
+function customContactForm(WP_REST_Request $request){
+    $postData = $request->get_params();
+    $password = substr(md5(microtime()), rand(0, 26), 9);
+    $user = wp_create_user($postData['email'], $password, $postData['email'] );
+    if(!isset($user->code)){
+        $user_id_role = new WP_User($user);
+        $user_id_role->set_role('subscriber');
+    }
+    return $user;
+}
+
+add_action('rest_api_init', function () {
+    register_rest_route('wp/v2', '/contactform', array(
+        'methods' => 'POST',
+        'callback' => 'customContactForm',
+    ));
+});

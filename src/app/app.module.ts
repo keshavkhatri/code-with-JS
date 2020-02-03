@@ -11,6 +11,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
+import { DisqusModule } from "ngx-disqus";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -26,7 +28,10 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        NgxPrettyDateModule
+        NgxPrettyDateModule,
+        DisqusModule.forRoot('code-with-js'),
+        FormsModule,
+        ReactiveFormsModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

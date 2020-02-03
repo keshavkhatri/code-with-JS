@@ -7,7 +7,8 @@ export const SYSTEM_CONSTANTS = {
 };
 
 export const APIS = {
-    POSTS: 'posts'
+    POSTS: 'posts',
+    SUBSCRIBE: 'contactform'
 }
 
 export const STATIC_SIDEBAR = {

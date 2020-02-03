@@ -19,4 +19,8 @@ export class DataServiceService {
     post(slug){
         return this.http.get(`${APIS.POSTS}?slug=${slug}`);
     }
+
+    subscribe(data){
+        return this.http.post(`${APIS.SUBSCRIBE}`,data);
+    }
 }

@@ -23,6 +23,7 @@
         "bootstrap-scss": "^4.4.1",
         "core-js": "^2.5.4",
         "font-awesome": "4.7.0",
+        "ngx-disqus": "^2.4.3",
         "ngx-pretty-date": "^1.1.0",
         "rxjs": "~6.3.3",
         "tslib": "^1.9.0",

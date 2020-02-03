@@ -13,6 +13,7 @@ export class DetailComponent implements OnInit {
     loading:boolean;
     post:any;
     static:any = STATIC_DETAILS;
+    pageId:string;
 
     constructor(
         private route: ActivatedRoute,
@@ -29,6 +30,7 @@ export class DetailComponent implements OnInit {
             (data: Response)=>{
                 console.log(data.body);
                 this.post = data.body[0];
+                this.pageId = this.route.snapshot.paramMap.get('id');
             },
             (error)=>{
 

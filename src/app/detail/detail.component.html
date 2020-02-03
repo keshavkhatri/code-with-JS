@@ -4,13 +4,15 @@
             <h2 class="title mb-2">{{post?.title?.rendered}}</h2>
             <div class="meta mb-3">
                 <span class="date">{{static.PUBLISHED}} {{post?.date | prettyDate}}</span>
-                <span class="time">{{post?.reading_time}}</span>
+                <span class="time" *ngIf="post?.reading_time">{{post?.reading_time}}</span>
             </div>
         </header>
 
         <div class="blog-post-body">
             <div [innerHtml]="post?.content?.rendered"></div>
         </div>
+
+        <disqus [identifier]="pageId"></disqus>
 
         <!-- <div class="blog-post-body">
             <figure class="blog-banner">

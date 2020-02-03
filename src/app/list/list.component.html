@@ -9,7 +9,7 @@
                     <h3 class="title mb-1"><a [routerLink]="['/post',post.slug]">{{post?.title?.rendered}}</a></h3>
                     <div class="meta mb-1">
                         <span class="date">{{static.PUBLISHED}} {{post?.date | prettyDate}}</span>
-                        <span class="time">{{post?.reading_time}}</span>
+                        <span class="time" *ngIf="post?.reading_time">{{post?.reading_time}}</span>
                     </div>
                     <div class="intro" [innerHtml]="post?.excerpt?.rendered.substring(0, length)"></div>
                     <a class="more-link" [routerLink]="['/post',post.slug]">{{static.READMORE}}&rarr;</a>
