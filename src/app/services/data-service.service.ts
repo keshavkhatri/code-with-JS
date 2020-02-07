@@ -23,4 +23,8 @@ export class DataServiceService {
     subscribe(data){
         return this.http.post(`${APIS.SUBSCRIBE}`,data);
     }
+
+    aboutMe(){
+        return this.http.get(`${APIS.PAGES}?slug=about-me`);
+    }
 }

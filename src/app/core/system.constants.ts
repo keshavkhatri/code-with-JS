@@ -8,7 +8,8 @@ export const SYSTEM_CONSTANTS = {
 
 export const APIS = {
     POSTS: 'posts',
-    SUBSCRIBE: 'contactform'
+    SUBSCRIBE: 'contactform',
+    PAGES: 'pages',
 }
 
 export const STATIC_SIDEBAR = {
@@ -29,7 +30,10 @@ export const STATIC_HOME = {
     SUBSCRIBE: 'Subscribe',
     READMORE: 'Read more ',
     PUBLISHED: 'Published',
-    NEXT: 'Next'
+    NEXT: 'Next',
+    EMAILERROR: 'Please enter a valid email address',
+    SUBSCRIBESUCCESS: 'You have successfully subscribed to the newsletter',
+    NEWSLETTER: 'Newsletter',
 }
 
 export const STATIC_DETAILS = {
@@ -47,14 +51,14 @@ export const STATIC_LIST = {
 export const SOCIALLINKS = [
     {
         icon: 'fa fa-facebook-official fa-fw',
-        link: 'https://www.facebook.com'
+        link: 'https://www.facebook.com/keshavkhatri8'
     },
     {
         icon: 'fa fa-linkedin fa-fw',
-        link: 'https://www.linkedin.com'
+        link: 'https://in.linkedin.com/in/keshav-khatri-8a5616a7'
     },
     {
         icon: 'fa fa-github-alt fa-fw',
-        link: 'https://github.com/'
+        link: 'https://github.com/keshavkhatri'
     },
 ]

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     posts: Array<object> = [];
     currentPage: number = SYSTEM_CONSTANTS.DEFAULTPAGE;
     pageSize: number = SYSTEM_CONSTANTS.DEFAULTPAGESIZE;
-    static: object = STATIC_HOME;
+    static = STATIC_HOME;
     length: number = SYSTEM_CONSTANTS.PARALENGTH;
     loading: boolean = false;
     subscribeForm: FormGroup;
@@ -39,27 +39,28 @@ export class HomeComponent implements OnInit {
 
     subscribeFormSubmit() {
         if (this.subscribeForm.invalid) {
+            this.errorMsg = this.static.EMAILERROR;
             return;
         }
-        let data = {
-            data: this.subscribeForm.value
-        };
-        this.api.subscribe(data).subscribe(
+        this.api.subscribe(this.subscribeForm.value).subscribe(
             (data: any) => {
-                // if (data[0].status) {
-                //     this.success = true;
-                //     this.successMsg = data[0].message;
-                // } else {
-                //     this.error = true;
-                //     this.errorMsg = this.messages.CONTACTUSERROR;
-                // }
+                this.successMsg = this.static.SUBSCRIBESUCCESS;
                 this.subscribeForm.reset();
+                this.hideMessage();
             },
             (error) => {
-                // this.errorMsg = this.messages.CONTACTUSERROR;
-                this.subscribeForm.reset();
+                this.subscribeForm.get('email').setErrors({ 'incorrect': true });
+                this.errorMsg = error.error.message;
+                this.hideMessage();
             }
         )
+    }
+
+    hideMessage(){
+        setTimeout(() => {
+            this.successMsg = '';
+            this.errorMsg = '';
+        }, 3000);
     }
 
     nextPage() {
