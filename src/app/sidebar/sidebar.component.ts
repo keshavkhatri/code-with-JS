@@ -10,7 +10,7 @@ export class SidebarComponent implements OnInit {
 
     static: object = STATIC_SIDEBAR;
     socialLinks: object = SOCIALLINKS;
-    
+
     constructor() { }
 
     ngOnInit() {

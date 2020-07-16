@@ -56,7 +56,7 @@ export class AboutComponent implements OnInit {
     getPage(){
         this.api.aboutMe().subscribe(
             (data: any) => {
-                this.content = data.body[0];
+                this.content = data.body[0].content.rendered;
                 this.loading = false;
             },
             (error) => {
@@ -71,4 +71,4 @@ export class AboutComponent implements OnInit {
             this.errorMsg = '';
         }, 3000);
     }
-}   
+}

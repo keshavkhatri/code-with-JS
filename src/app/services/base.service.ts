@@ -73,7 +73,7 @@ export class BaseService {
             'Content-Type': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
             'Cache-Control': 'no-cache',
-            
+
         };
 
         if (isPlatformBrowser(this.platformId)) {
