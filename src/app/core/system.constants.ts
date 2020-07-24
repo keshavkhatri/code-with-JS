@@ -38,7 +38,7 @@ export const STATIC_HOME = {
 
 export const STATIC_DETAILS = {
     PUBLISHED: 'Published',
-    
+
 }
 
 export const STATIC_LIST = {
@@ -61,4 +61,19 @@ export const SOCIALLINKS = [
         icon: 'fa fa-github-alt fa-fw',
         link: 'https://github.com/keshavkhatri'
     },
+]
+
+export const CONTACT_PAGE = [
+    {
+        icon: 'fa fa-map-marker fa-3x',
+        content: 'Jaipur, Rajasthan'
+    },
+    {
+        icon: 'fa fa-phone fa-3x',
+        content: '+91-7737825758'
+    },
+    {
+        icon: 'fa fa-envelope fa-3x',
+        content: 'keshu88khatri@gmail.com'
+    }
 ]
