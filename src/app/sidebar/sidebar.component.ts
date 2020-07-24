@@ -8,8 +8,8 @@ import { STATIC_SIDEBAR, SOCIALLINKS } from '../core/system.constants';
 })
 export class SidebarComponent implements OnInit {
 
-    static: object = STATIC_SIDEBAR;
-    socialLinks: object = SOCIALLINKS;
+    static: any = STATIC_SIDEBAR;
+    socialLinks: any = SOCIALLINKS;
     
     constructor() { }
 

@@ -13,7 +13,7 @@ export class ListComponent implements OnInit {
     currentPage: number = SYSTEM_CONSTANTS.DEFAULTPAGE;
     pageSize: number = SYSTEM_CONSTANTS.DEFAULTPAGESIZE;
     loading: boolean = false;
-    static: object = STATIC_LIST;
+    static: any = STATIC_LIST;
     totalPages:number;
     length: number = SYSTEM_CONSTANTS.PARALENGTH;
 
