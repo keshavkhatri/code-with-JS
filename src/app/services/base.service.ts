@@ -63,8 +63,8 @@ export class BaseService {
                 defaultHeaders = this.createAuthorizationHeader(localStorage.getItem('token'), headers);
                 options = { headers: defaultHeaders };
             }
+            options.observe = 'response';
         }
-        options.observe = 'response';
         return options;
     }
 

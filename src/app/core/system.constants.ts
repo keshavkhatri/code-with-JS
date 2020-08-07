@@ -1,5 +1,5 @@
 export const SYSTEM_CONSTANTS = {
-    API_ROOT: '/admin/wp-json/wp/',
+    API_ROOT: 'http://localhost/code-with-JS/admin/wp-json/wp/',
     API_VERSION: 'V2/',
     DEFAULTPAGE: 1,
     DEFAULTPAGESIZE: 10,
