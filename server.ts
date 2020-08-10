@@ -8,12 +8,13 @@ import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
 
+
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
     const server = express();
     const distFolder = join(process.cwd(), 'dist/code-with-JS/browser');
     const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-
+    const proxy = require('express-http-proxy');
     // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
     server.engine('html', ngExpressEngine({
         bootstrap: AppServerModule,
@@ -33,6 +34,14 @@ export function app(): express.Express {
     server.get('*', (req, res) => {
         res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
     });
+
+    server.use('/proxy', proxy('http://www.codewithjs.com:8080/admin/wp-json/wp/', {
+        http: 'http://www.codewithjs.com:8080/admin/wp-json/wp/',
+        proxyReqPathResolver: function (req) {
+            console.log("===========================================",req);
+            return '/proxy' + req.url;
+        }
+    }));
 
     return server;
 }
